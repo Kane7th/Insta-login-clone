@@ -3,13 +3,28 @@ import InputField from "../components/InputField";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 
-
 const LoginPage = () => {
+  // Define state for username, password, and login status
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(""); // To show any login errors
 
+  // Mock credentials
+  const mockUser = {
+    username: "testuser", // Mock username
+    password: "password123" // Mock password
+  };
+
+  // Handle login functionality
   const handleLogin = () => {
-    console.log("Logging in with:", username, password);
+    if (username === mockUser.username && password === mockUser.password) {
+      // If the credentials match, show a success message
+      alert("Login Successful!");
+      setError(""); // Clear any previous error
+    } else {
+      // If they don't match, show an error
+      setError("Sorry, your password was incorrect. Please double-check your password.");
+    }
   };
 
   return (
@@ -31,7 +46,14 @@ const LoginPage = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button text="Log In" onClick={handleLogin} disabled={!username || !password} />
+        <Button
+          text="Log In"
+          onClick={handleLogin}
+          disabled={!username || !password} // Disable if username or password is empty
+        />
+
+        {/* Error message for invalid login */}
+        {error && <p className="error-message" style={{ color: "red" }}>{error}</p>}
 
         <div className="divider">
           <div className="line" />
@@ -51,7 +73,6 @@ const LoginPage = () => {
       </div>
 
       <Footer />
-
     </div>
   );
 };
