@@ -5,14 +5,14 @@ import Footer from "../components/Footer";
 
 const LoginPage = () => {
   // Define state for username, password, and login error message
-  const [username, setUsername] = useState("");  // Holds the username input
-  const [password, setPassword] = useState("");  // Holds the password input
-  const [error, setError] = useState(""); // Holds any login error message
+  const [username, setUsername] = useState("");  
+  const [password, setPassword] = useState("");  
+  const [error, setError] = useState(""); 
 
   // Mock credentials for demonstration purposes
   const mockUser = {
-    username: "testuser", // Mock username
-    password: "password123", // Mock password
+    username: "testuser", 
+    password: "password123", 
   };
 
   // Handle login functionality when the login button is clicked
