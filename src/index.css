@@ -161,3 +161,16 @@ body {
 .language-selector:hover {
   color: #00376b;
 }
+
+.apple-button, .google-button {
+  width: 150px;  
+  height: auto; 
+  padding-top: 10px;
+  margin: 0 10px;  
+}
+
+.app-store-buttons {
+  display: flex;        
+  justify-content: center; 
+  align-items: center;  
+}
